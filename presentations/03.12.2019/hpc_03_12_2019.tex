@@ -624,6 +624,95 @@
 \end{frame}
 
 %----------------------------------------------------------------------------------------------------
+\subsection{Ingredients of a Dispatcher?}
+\begin{frame}[t]{SSH Dispatcher Unit (Current version)}
+  \small
+   \only<1>{
+    \includegraphics[width=0.95\textwidth]{ssh_dispatcher-first_step}
+  }
+  \only<2>{
+    \includegraphics[width=0.95\textwidth]{ssh_dispatcher-second_step}
+  }
+  \only<3>{
+    \includegraphics[width=0.95\textwidth]{ssh_dispatcher-third_step}
+  }
+\end{frame}
+
+
+%----------------------------------------------------------------------------------------------------
+\subsection{Ingredients of a Dispatcher?}
+\begin{frame}[t]{Modifications to algorithm}
+  \small
+  \Tit{Adaptive experimental design}
+  \begin{itemize}
+    \item Start with $\NRefine$ points
+    \item Before constructing $k$-th PCE, enrich $\cx\in\cd_{\BParams}^k$ 
+    to have at least $\NRefine$ points
+  \end{itemize}
+  \pause
+  \emphconc{Keep number of points per PCE constant}
+  \vspace{2em}
+  \pause
+  \Tit{Splitting direction}\\
+  \begin{columns}
+    \begin{column}[T]{0.75\linewidth}
+      \begin{itemize}
+        \item Split according to {\altx residual variance}
+        {\scriptsize
+          \begin{equation*}
+          i_{\mathrm{split}}=\argmin_{i\in\{1,\dots,M\}} \min 
+          \left\{\Var{\mathcal{R}(X)}_{\cd_{\mathrm{split}}^{i,1}}, 
+          \Var{\mathcal{R}(X)}_{\cd_{\mathrm{split}}^{i,2}}\right\}
+          \end{equation*}
+        }
+      \end{itemize}
+      \emphconc{Compact support}
+    \end{column}
+    \begin{column}[T]{0.25\linewidth}
+      \only<3>{
+        %\includegraphics[width=\textwidth]{SSE_split_2D_domain_1}
+      }
+      \only<4>{
+        %\includegraphics[width=\textwidth]{SSE_split_2D_domain_2}
+      }
+      \only<5>{
+        %\includegraphics[width=\textwidth]{SSE_split_2D_domain_3}
+      }
+      \only<6>{
+        %\includegraphics[width=\textwidth]{SSE_split_2D_domain_4}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[t]{Adaptive Algorithm}
+  \small
+  \begin{algorithmic}[0]
+    \Inputs{
+      \State \NRefine, \Func{}, \Pmax, \Inp{}
+    }\\
+    \Initialize{
+      \State $\Domain{[1]}\gets\cd_{\BParams}$
+      \State \textcolor{red}{$\X\gets\NRefine$ samples from \Inp{}}
+      \State $\Res\gets\Func{\X}$
+      \State $\PCEs[1]\gets\ConstrPCE{\X,\Res,\Domain{[1]},\Inp{},\Pmax}$
+    }\\	
+    \Repeater{
+      \State $\PCEref, \Dref\gets$ \SelectRefine{\PCEs{},\Domain{}}
+      \State $\Dnew[1],\Dnew[2]\gets\SplitDomain{\PCEref,\Dref}$ 
+      \For{$\textit{d}\gets 1, 2$}
+      \State \textcolor{red}{$\X,\Res\gets$ enrich until at least 
+        $\NRefine$ samples inside $\Dnew[d]$}
+      \State $\PCEnew[d]\gets\ConstrPCE{\X,\Res,\Dnew[d],\Inp{},\Pmax}$ 
+      \EndFor
+      \State Update $\Res$, $\Domain$, $\PCEs{}$ 
+    }
+  \end{algorithmic}
+\end{frame}
+
+%----------------------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------------------
 \subsection{Adaptive algorithm}
 \begin{frame}[t]{Modifications to algorithm}
 	\small
