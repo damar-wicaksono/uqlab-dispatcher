@@ -17,7 +17,7 @@
    id="svg8"
    sodipodi:docname="ssh_dispatcher-third_step.svg"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
-   inkscape:export-filename="/home/wdamar/Documents/uq_dispatcher/ssh_dispatcher-third_step.png"
+   inkscape:export-filename="/home/wdamar/projects/uqlab-dispatcher/presentations/03.12.2019/Figures/ssh_dispatcher-third_step.png"
    inkscape:export-xdpi="306.9942"
    inkscape:export-ydpi="306.9942">
   <defs
@@ -374,8 +374,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.9899495"
-     inkscape:cx="496.65703"
-     inkscape:cy="320.51434"
+     inkscape:cx="422.41589"
+     inkscape:cy="324.57966"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -431,7 +431,7 @@
     </g>
     <g
        id="g938"
-       transform="matrix(0.6753654,0,0,0.6753654,195.87444,119.60831)">
+       transform="matrix(0.6753654,0,0,0.6753654,195.87444,112.26915)">
       <image
          width="37.016998"
          height="37.016998"
@@ -852,7 +852,7 @@
          id="tspan3702">Client Session</tspan></text>
     <g
        id="g3613-5"
-       transform="translate(-55.562507,11.112515)"
+       transform="translate(-55.56251,29.104162)"
        style="fill:#4d4d4d;fill-opacity:1">
       <rect
          y="222.91667"
@@ -871,7 +871,7 @@
     </g>
     <g
        id="g3750"
-       transform="translate(23.812498,3.1750123)">
+       transform="translate(23.812495,21.166659)">
       <rect
          y="230.85417"
          x="84.666672"
@@ -903,7 +903,7 @@
     </g>
     <g
        id="g3755"
-       transform="translate(-7.9374969,3.1750123)">
+       transform="translate(-7.9375003,21.166659)">
       <rect
          y="230.85417"
          x="158.75"
@@ -1063,16 +1063,16 @@
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'Courier New';-inkscape-font-specification:'Courier New, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
        x="109.45481"
-       y="257.53375"
+       y="238.72957"
        id="text3780-1"><tspan
          sodipodi:role="line"
          id="tspan3778-7"
          x="109.45481"
-         y="257.53375"
+         y="238.72957"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:'Courier New';-inkscape-font-specification:'Courier New, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332">&gt; scp &lt;remote&gt; &lt;local&gt; </tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend-9-2-9)"
-       d="m 146.84022,244.08334 v 7.9375"
+       d="m 146.84022,241.4375 v 7.9375"
        id="path3815-6-9-0"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0" />
@@ -1159,39 +1159,39 @@
          x="4.9634094"
          y="210.34793"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
-         id="tspan12521-9">Splice</tspan><tspan
+         id="tspan12546">Computation</tspan><tspan
          sodipodi:role="line"
          x="4.9634094"
          y="219.16737"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
-         id="tspan12546">computation</tspan></text>
+         id="tspan34284">on splices</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="5.250308"
-       y="273.07245"
+       x="5.329"
+       y="260.22125"
        id="text12454-4-5-8"
        inkscape:transform-center-y="-20.579758"><tspan
          sodipodi:role="line"
-         x="5.250308"
-         y="273.07245"
+         x="5.329"
+         y="260.22125"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
          id="tspan12546-4">Aggregation</tspan><tspan
          sodipodi:role="line"
-         x="5.250308"
-         y="281.89191"
+         x="5.329"
+         y="269.04071"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
          id="tspan12609">(merge)</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;line-height:1.25;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="4.8979526"
-       y="249.83017"
+       x="4.8983631"
+       y="239.10301"
        id="text12454-4-5-8-2"
        inkscape:transform-center-y="-20.579758"><tspan
          sodipodi:role="line"
-         x="4.8979526"
-         y="249.83017"
+         x="4.8983631"
+         y="239.10301"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.05555534px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
          id="tspan12546-4-3">Copy-to-client</tspan></text>
     <path
@@ -1201,20 +1201,20 @@
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.24570169;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#StopL-5);marker-end:url(#StopL-5)"
-       d="M 254,146.1875 V 258.63542"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.22455764;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#StopL-5);marker-end:url(#StopL-5)"
+       d="m 254,146.1875 v 93.92708"
        id="path12613-6"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.19764236;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#StopL-0);marker-end:url(#StopL-0)"
-       d="m 254,267.89584 v 26.45833"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.25000003;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#StopL-0);marker-end:url(#StopL-0)"
+       d="m 254,252.02083 v 42.33334"
        id="path12613-66"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0" />
     <g
        id="g943-6"
-       transform="matrix(0.67536464,0,0,0.67536464,231.61258,201.91298)">
+       transform="matrix(0.67536464,0,0,0.67536464,231.61258,195.89214)">
       <image
          width="37.01704"
          height="37.01704"
@@ -1236,8 +1236,8 @@
            sodipodi:role="line">Local</tspan></text>
     </g>
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.19875;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.59625002, 0.19875;stroke-dashoffset:0;stroke-opacity:1"
-       d="M 5.29166,291.70834 H 29.104167"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.22303087;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.66909262, 0.22303086;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 5.29166,290.67939 H 29.104167"
        id="path3666-7-5"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0" />
@@ -1254,11 +1254,11 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93888903px;font-family:'Open Sans';-inkscape-font-specification:'Open Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;opacity:0.93999999;stroke-width:0.26458332"
          id="tspan16116">Parallel computation</tspan></text>
     <rect
-       style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:0.12166607;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:0.13652976;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect17190"
        width="291.04166"
-       height="35.718754"
+       height="44.979221"
        x="2.6458333"
-       y="259.95834" />
+       y="250.69788" />
   </g>
 </svg>
