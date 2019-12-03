@@ -135,48 +135,54 @@
 }
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-%----------------------------------------------------------------------------------------------------
-\begin{frame}[t]{Dispatcher}
+%-------------------------------------------------------------------------------
+\begin{frame}[t]{Dispatcher Unit}
   \small
-
   \Tit{Pre-requisites for parallel computations}:
   \begin{itemize}
-    \item Parallelized algorithm/functions/modules
-    \item Parallel computing resources (hardware)
-    \item Required information (e.g., about computing resources) to conduct parallel computations
+    \item Parallelized algorithms or functions
+    \item Parallel computing resources (i.e., hardware)
+    \item Required information (e.g., about computing resources)
+    to conduct parallel computations (i.e., the interface)
   \end{itemize}
 
   \begin{block}{Dispatcher unit}
-    A Dispatcher unit is a support object that {\altx contains} the information and {\altx performs} some IT operations required to conduct parallel computations, be it locally or in a remote cluster, of parallel algorithms or functions in \uqlab.
+    A Dispatcher unit is a \uqlab{} support object that {\altx contains}
+    the information and {\altx performs} some IT operations required
+    to conduct parallel computations, be it locally or in a remote cluster,
+    of (\uqlab) parallel algorithms or functions.
   \end{block}
   
   \Tit{Dispatcher-aware}
   
   \begin{itemize}
-    \item[] {\altx Dispatcher-aware} functions (or modules) in \uqlab{} are functions (resp. modules) that support parallel computation using the information stored in a Dispatcher unit. How a particular module, function, or algoritm is parallelized is defined out of the Dispatcher unit itself.
+    \item[] {\altx Dispatcher-aware} functions (or modules) in \uqlab{}
+    are functions (resp. modules) that support parallel computation using
+    the information stored in a Dispatcher unit. How a particular module,
+    function, or algoritm is parallelized is defined {\altx out of}
+    the Dispatcher unit itself.
   \end{itemize}
 
 % If a parallelization of a function can be exploited, then module developers should simply conform with the interface provided by the Dispatcher unit for the actual parallel computation.
 % A dispatcher unit should provide the interface such that a parallel algorithm can access the computing resources to conduct parallel computation.
 \end{frame}
 
-%----------------------------------------------------------------------------------------------------
-%----------------------------------------------------------------------------------------------------
-\section{Dispatcher-aware function}
-\secoutline
+%-------------------------------------------------------------------------------
 
-
-%----------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 \begin{frame}[fragile,t]{\texttt{uq\_evalModel}: a Dispatcher-aware function}
 	\small
 
   \Tit{\mcode{uq_evalModel}}
   \begin{itemize}
-    \item If a Dispatcher unit is not specified (\emph{i.e.,} empty) then the evaluation is done locally on a single CPU\footnote{\matlab{} has a built-in support for multi-threaded computation for some functions.}.
-    \item To create a Dispatcher unit, define a Dispatcher configuration options and a remote cluster profile, and create a Dispatcher unit.
+    \item If a Dispatcher unit is not specified (i.e., empty)
+    then the evaluation is done locally on a single CPU\footnote{\matlab{} has
+      a built-in support for multi-threaded computation for some functions.}.
+    \item To create a Dispatcher unit, define a Dispatcher configuration options
+    and a remote cluster profile, and create a Dispatcher unit.
     \item Call the function with an \mcode{'HPC'} flag.
   \end{itemize}
 
@@ -188,11 +194,14 @@ uq_createDispatcher(DispatcherOpts)
 Y = uq_evalModel(X,'HPC');  % HPC flag (use the Dispatcher unit)
 \end{lstlisting}
 
-  \emphconc{The execution of a parallel computation for \mcode{uq_evalModel} is {\altx transparent} to user. Be it local or in cluster, the user just get the Y values as requested; other than specifying a Dispatcher unit and using the flag, users will see no other difference.}
+  \emphconc{The execution of a parallel computation for \mcode{uq_evalModel} is
+  {\altx transparent} to user. Be it local or in cluster, the user just get the
+  \texttt{Y} values as requested; other than specifying a Dispatcher unit and
+  using the flag, users will see no apparent differences.}
 \end{frame}
 
-%----------------------------------------------------------------------------------------------------
-\begin{frame}[t]{\texttt{uq\_evalModel} and SSH Dispatcher unit in action}
+%-------------------------------------------------------------------------------
+\begin{frame}[t]{\texttt{uq\_evalModel} and SSH Dispatcher (behind the scene)}
   \small
    \only<1>{
     \includegraphics[width=0.95\textwidth]{ssh_dispatcher-first_step}
@@ -205,77 +214,113 @@ Y = uq_evalModel(X,'HPC');  % HPC flag (use the Dispatcher unit)
   }
 \end{frame}
 
-%----------------------------------------------------------------------------------------------------
-\section{Components of a Dispatcher}
-\begin{frame}[t]{Components of a Dispatcher unit}
-  \small
-  \only<1>{
-    \includegraphics[width=0.95\textwidth]{uq_dispatcher_current}
-  }
-  \only<2>{
-    \includegraphics[width=0.95\textwidth]{uq_dispatcher}
-  }
-\end{frame}
-
-%----------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 \begin{frame}[t]{Exploiting parallelisms for \uqlab{}}
-  \small
-  \Tit{Adaptive experimental design}
+  \small  
+  The idea of \mcode{uq_evalModel} with SSH Dispatcher unit should apply to
+  the more general case:
+  \begin{itemize}
+    \item {\altx Developers} exploit any potential parallelisms in their
+    algorithms or functions and use the interface provided by the Dispatcher
+    unit to implement the computation in parallel computing resources.
+    \item {\altx Users} have access to parallel computing resources, define the 
+    resource requirements, specify the cluster profile, and call some functions
+    with parallel flag.
+  \end{itemize}
+  
+  \emphconc{A Dispatcher unit provides the necessary interfaces
+  from these two perspectives.}
+  
+  Different layers of potential parallelism in \uqlab{} (UQ analysis, in general)
+  exist:
+  \begin{itemize}
+    \item {\altx Coarse-grain}, e.g., parametric sweep studies
+    (\`a la Nora's PCE study or Christos' Kriging study).
+    \item {\altx Medium-grain}, e.g., model evaluation with \mcode{uq_evalModel}
+    (\texttt{UQLink}, parallel MCMC, etc.).
+    \item {\altx Fine-grain}, e.g., parallelization of RBDO analysis.
+  \end{itemize}
+
 \end{frame}
 
-%----------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+\begin{frame}[t]{Components of a Dispatcher unit: Current SSH Dispatcher}
+  \small
+  \includegraphics[width=0.95\textwidth]{uq_dispatcher_current}
+\end{frame}
+%-------------------------------------------------------------------------------
 
-%----------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+\begin{frame}[t]{Components of a Dispatcher unit: Extension}
+  \small
+  \includegraphics[width=0.95\textwidth]{uq_dispatcher}
+\end{frame}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
 \begin{frame}[t]{What's next?}
 	\small
-  \Tit{Challenges}
-	\begin{columns}
-		\begin{column}[T]{0.8\linewidth}
-			\begin{itemize}
-				\item SSE for surrogate modeling can be applied for {\altx 
-				non-smooth} models and models with {\altx complex local 
-				characteristics}
-				\item SSE for Bayesian calibration requires an {\altx adaptive 
-				experimental design} strategy
-				\item {\altx Adaptive SSE} works for very peaked likelihood 
-				functions with 
-				{\altx 
-				compact support}
-				\item Only one tuning parameter ({\altx $\NRefine$})
-				\item Analytical {\altx post-processing} capabilities are 
-				extremely beneficial
-			\end{itemize}
-		\end{column}
-		\begin{column}[T]{0.2\linewidth}
-			\centering
-		%	\includegraphics[width=\textwidth,trim={0 0 0 0.2cm},clip]{pros}
-		\end{column}
-	\end{columns}
-	\vspace{4em}
-	\begin{columns}
-		\begin{column}[T]{0.2\linewidth}
-		%	\includegraphics[width=\textwidth,trim={0 0 0 0.5cm},clip]{cons}
-		\end{column}
-		\begin{column}[T]{0.8\linewidth}
-			\begin{itemize}
-				\item At small experimental designs {\altx overfitting} is a 
-				problem
-				\item Requires relatively {\altx large experimental design}		
-			\end{itemize}
-		\end{column}
-	\end{columns}
-% logo placement
-	\begin{tikzpicture}[overlay, remember picture] 
-	\node at (current page.south east) 
-	[
-	anchor=south east,
-	xshift=0mm,
-	yshift=3mm
-	] 
-	{
-	%	\includegraphics[width=0.14\textwidth]{uqlab}
-	};
-	\end{tikzpicture}
+  \Tit{Types}
+  \begin{enumerate}
+    \item[] Wrapper around \matlab{} Parallel toolbox (local parallel with
+    \emp{e.g.,} \mcode{parfor, spmd}) and Parallel Server (cluster parallel)
+    should be possible.
+  \end{enumerate}
+    
+  \Tit{Modes}
+  \begin{enumerate}
+    \item[] Non-interactive (batch) mode is essential for an optimal user
+    experience, perhaps using folder-based approach.
+  \end{enumerate}
+  
+  \Tit{Schedulers}
+  \begin{enumerate}
+    \item[] Supports for major schedulers are required,
+    perhaps with a possibility to specify a custom one.
+  \end{enumerate}
+      
+  \Tit{Remote scripts}
+  \begin{enumerate}
+    \item[] Current implementation assumes \matlab/\uqlab{} is available
+    in remote/cluster. For some types of computation they are not neccessary
+    (e.g., \texttt{UQLink} computation).
+  \end{enumerate}
+    
+  \Tit{Data operations}
+  \begin{enumerate}
+    \item[] Current implementation loads the whole data to a process and does
+    the merging operation after copying back to local client.
+  \end{enumerate}
+\end{frame}
+
+%-------------------------------------------------------------------------------
+\begin{frame}[t]{What's next? Challenges}
+	\small
+  \Tit{Modes}
+  \begin{enumerate}
+    \item[] Non-interactive (batch) mode opens additional considerations not
+    exist in interactive mode: job monitoring, protection mechanism, etc.
+  \end{enumerate}
+  
+  \Tit{Schedulers}
+  \begin{enumerate}
+    \item[] There are many schedulers available and a custom specification would
+    need to consider a very general case.
+  \end{enumerate}
+      
+  \Tit{Remote scripts}
+  \begin{enumerate}
+    \item[] Python-based remote scripting is possible to avoid \matlab/\uqlab{}
+    in cluster, {\altx but this may include rewrite part of \texttt{UQLink} in
+    Python}.
+  \end{enumerate}
+    
+  \Tit{Data operations}
+  \begin{enumerate}
+    \item[] Current implementation loads the whole data to a process and does
+    the merging operation after copying back to local client.
+    {\altx This approach might not be suitable for a very large data.}
+  \end{enumerate}
 \end{frame}
 
 \end{document}
